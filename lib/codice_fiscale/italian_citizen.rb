@@ -4,7 +4,7 @@ module CodiceFiscale
 
     MANDATORY_ATTRIBUTES = [:name, :surname, :birthdate, :gender]
 
-    attr_accessor :city_name, :country_name, :province_code, *MANDATORY_ATTRIBUTES
+    attr_accessor :city_name, :country_name, :province_code, :national_code, *MANDATORY_ATTRIBUTES
 
     # Validations
 

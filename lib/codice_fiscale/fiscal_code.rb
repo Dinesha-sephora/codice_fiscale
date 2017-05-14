@@ -38,6 +38,9 @@ module CodiceFiscale
     end
 
     def birthplace_part
+      if (@italian_citizen.national_code.present?)
+        return @italian_citizen.national_code
+      end
       code = citizen.born_in_italy? && Codes.city(city_name, province_code) || Codes.country(country_name)
       raise "Cannot find a valid code for #{[country_name, city_name, province_code].compact.join ', '}" unless code
       code
